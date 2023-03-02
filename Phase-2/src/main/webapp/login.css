@@ -7,13 +7,15 @@
     top: 40%;
     left: 20%;
 }
-div{
+
+div {
     border-radius: 3px;
-    padding : 10px;
+    padding: 10px;
     text-align: center;
-    background-color: antiquewhite;
+    background-color: orangered;
     font-size: 15px;
 }
+
 body {
     text-align: center;
 }

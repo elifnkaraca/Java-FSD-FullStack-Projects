@@ -21,7 +21,7 @@
 
 <h1>Assign a Subject to a Class</h1>
 <%
-    SessionFactory sf  = DatabaseConfiguration.getSessionFactory();
+    SessionFactory sf = DatabaseConfiguration.getSessionFactory();
     Session hibernateSession = sf.openSession();
     List<Classes> classes = hibernateSession.createQuery("from Classes").list();
     List<Subject> subjects = hibernateSession.createQuery("from Subject").list();
@@ -29,14 +29,14 @@
 <form action="assignSubject" method="post">
     <table>
         <tr>
-            <th>Class Name </th>
-            <th>Subject Name </th>
+            <th>Class Name</th>
+            <th>Subject Name</th>
         </tr>
         <tr>
             <td>
                 <select name="class">
                     <%
-                        for (Classes clas : classes){
+                        for (Classes clas : classes) {
                             out.print("<option>" + clas.getClass_name());
                             out.print("</option>");
                         }
@@ -47,7 +47,7 @@
             <td>
                 <select name="subject">
                     <%
-                        for (Subject subject : subjects){
+                        for (Subject subject : subjects) {
                             out.print("<option>" + subject.getSubject_name());
                             out.print("</option>");
                         }

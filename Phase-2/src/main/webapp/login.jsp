@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
-<h1><%= "Welcome to Student Portal!" %></h1>
+<h1><%= "Welcome to Student Portal!" %>
+</h1>
 <hr>
 </form>
 <hr/>
@@ -29,7 +30,7 @@
         <br>
         <%
             Object message = request.getAttribute("errorMessage");
-            if(message!= null){ %>
+            if (message != null) { %>
         <span style="color:red;"><%=message.toString()%></span>
         <%}%>
     </div>

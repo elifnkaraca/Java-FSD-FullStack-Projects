@@ -22,21 +22,21 @@
 
 <h1>The Following Students are listed</h1>
 <%
-    SessionFactory sf  = DatabaseConfiguration.getSessionFactory();
+    SessionFactory sf = DatabaseConfiguration.getSessionFactory();
     Session hibernateSession = sf.openSession();
     List<Student> students = hibernateSession.createQuery("from Student").list();
 %>
 <table>
     <tr>
-        <th>Name </th>
-        <th>Last Name </th>
-        <th>Assigned Class </th>
+        <th>Name</th>
+        <th>Last Name</th>
+        <th>Assigned Class</th>
     </tr>
     <%
-        for(Student student : students){
+        for (Student student : students) {
             out.print("<tr>");
             out.print("<td>" + student.getFname() + "</td>");
-            out.print("<td>" + student.getLname()+ "</td>");
+            out.print("<td>" + student.getLname() + "</td>");
             out.print("<td>" + getClassName(student) + "</td>");
             out.print("</tr>");
         }
@@ -44,11 +44,10 @@
 </table>
 
 <%!
-    public String getClassName(Student student){
-        if (student.getClasses() == null){
+    public String getClassName(Student student) {
+        if (student.getClasses() == null) {
             return "no class assigned";
-        }
-        else{
+        } else {
             return student.getClasses().getClass_name();
         }
     }

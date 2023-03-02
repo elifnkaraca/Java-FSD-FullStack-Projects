@@ -25,30 +25,30 @@
 
 <h1>The Following Teachers are listed</h1>
 <%
-    SessionFactory sf  = DatabaseConfiguration.getSessionFactory();
+    SessionFactory sf = DatabaseConfiguration.getSessionFactory();
     Session hibernateSession = sf.openSession();
     List<Teacher> teachers = hibernateSession.createQuery("from Teacher").list();
 %>
 <table>
     <tr>
-        <th>First Name </th>
-        <th>Last Name </th>
+        <th>First Name</th>
+        <th>Last Name</th>
         <th>Assigned Class</th>
     </tr>
     <%
-        for(Teacher teacher : teachers){
-           out.print("<tr>");
+        for (Teacher teacher : teachers) {
+            out.print("<tr>");
             out.print("<td>" + teacher.getFirst_name() + "</td>");
             out.print("<td>" + teacher.getLast_name() + "</td>");
 
             StringBuffer buf = new StringBuffer();
             boolean first = true;
-            for (Subject subject : teacher.getSubjects()){
-                if(first== true){
+            for (Subject subject : teacher.getSubjects()) {
+                if (first == true) {
                     buf.append("<td>" + subject.getSubject_name() + "</td>");
                     buf.append("</tr>");
                     first = false;
-                }else{
+                } else {
                     buf.append("<tr><td></td><td></td>");
                     buf.append("<td>" + subject.getSubject_name() + "</td>");
                     buf.append("</tr>");
