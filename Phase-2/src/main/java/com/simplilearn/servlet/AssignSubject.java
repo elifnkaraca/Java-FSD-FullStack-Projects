@@ -45,15 +45,12 @@ public class AssignSubject extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 
-		// Step 1: Get details , user has entered
 		String clas = request.getParameter("class");
 		String subject = request.getParameter("subject");
 
-		// Step2: Create session
 		SessionFactory sf  = DatabaseConfiguration.getSessionFactory();
 		Session session = sf.openSession();
 
-		// Step 3: Begin Transaction
 		Transaction tx = session.beginTransaction();
 
 		String hql_clas= "from Classes where class_name='" + clas + "'";
@@ -66,8 +63,6 @@ public class AssignSubject extends HttpServlet {
 		query.setParameter("sn", subject);
 
 		query.executeUpdate();
-
-		// STep5: Commit transaction and close sessoin
 		tx.commit();
 		session.close();
 

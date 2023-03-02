@@ -7,7 +7,7 @@
 <p> This is home page!</p>
 <%
     Object email = request.getAttribute("email");
-    if(email!= null){ %>
+    if (email != null) { %>
 <span style="color:red;"><%=email.toString()%></span>
 <%}%>
 <p>What you want to do?</p>

@@ -1,10 +1,12 @@
 package com.simplilearn.servlet;
 
 import com.simplilearn.configuration.DatabaseConfiguration;
+import com.simplilearn.entity.Classes;
 import com.simplilearn.entity.Student;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,15 +16,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
-@WebServlet ("/addStudent")
-public class AddStudent extends HttpServlet {
+/**
+ * Servlet implementation class AssignStudent
+ */
+@WebServlet ("/assignStudent")
+public class AssignStudent extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public AddStudent() {
+	public AssignStudent() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -42,19 +48,26 @@ public class AddStudent extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 
-		String name = request.getParameter("fname");
-		String lname = request.getParameter("lname");
+		String name = request.getParameter("name");
+		String[] nameList = name.split(" ");
+		String classes = request.getParameter("class");
 
 		SessionFactory sf  = DatabaseConfiguration.getSessionFactory();
 		Session session = sf.openSession();
 
 		Transaction tx = session.beginTransaction();
 
-		Student student = new Student();
-		student.setFname(name);
-		student.setLname(lname);
+		String hql_classes= "from Classes where class_name='" + classes + "'";
+		List<Classes> clas = session.createQuery(hql_classes).list();
 
-		session.save(student);
+		String hql_student = "update Student s set s.classes=:n where s.fname=:fn and s.lname=:ln";
+
+		Query<Student> query = session.createQuery(hql_student);
+		query.setParameter("n", clas.get(0));
+		query.setParameter("fn", nameList[0]);
+		query.setParameter("ln", nameList[1]);
+
+		query.executeUpdate();
 		tx.commit();
 		session.close();
 

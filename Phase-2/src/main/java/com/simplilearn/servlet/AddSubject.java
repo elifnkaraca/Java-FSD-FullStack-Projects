@@ -45,25 +45,16 @@ public class AddSubject extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 
-		// Step 1: Get details , user has entered
 		String name = request.getParameter("name");
 
-		// Step2: Create session
 		SessionFactory sf  = DatabaseConfiguration.getSessionFactory();
 		Session session = sf.openSession();
-
-		// Step 3: Begin Transaction
 		Transaction tx = session.beginTransaction();
-
-		//Step4; Create persistent object and add Teacher
 
 		Subject subject = new Subject();
 		subject.setSubject_name(name);
 
-
 		session.save(subject);
-
-		// STep5: Commit transaction and close sessoin
 		tx.commit();
 		session.close();
 
