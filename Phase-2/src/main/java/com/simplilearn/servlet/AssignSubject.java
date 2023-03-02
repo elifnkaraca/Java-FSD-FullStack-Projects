@@ -48,12 +48,12 @@ public class AssignSubject extends HttpServlet {
 		String clas = request.getParameter("class");
 		String subject = request.getParameter("subject");
 
-		SessionFactory sf  = DatabaseConfiguration.getSessionFactory();
+		SessionFactory sf = DatabaseConfiguration.getSessionFactory();
 		Session session = sf.openSession();
 
 		Transaction tx = session.beginTransaction();
 
-		String hql_clas= "from Classes where class_name='" + clas + "'";
+		String hql_clas = "from Classes where class_name='" + clas + "'";
 		List<Classes> classes = session.createQuery(hql_clas).list();
 
 		String hql_subject = "update Subject s set s.classes=:n where s.subject_name=:sn";
