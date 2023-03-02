@@ -1,0 +1,17 @@
+
+P
+java:S1118":Add a private constructor to hide the implicit public one.(¯±˜¿
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ÉÁç®þÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(©•Ä°ýÿÿÿÿ
+S	java:S106 "9Replace this use of System.out or System.err by a logger.(è—Ê“üÿÿÿÿ
+B
+java:S1125#"'Remove the unnecessary boolean literal.(¢…Šåýÿÿÿÿ
+f	java:S128G"LEnd this switch case with an unconditional break, return or throw statement.(ÌÊëÎüÿÿÿÿ
+S	java:S1061"9Replace this use of System.out or System.err by a logger.(‰–à™üÿÿÿÿ
+N	java:S1067"9Replace this use of System.out or System.err by a logger.(¤Ä’ã
+N	java:S106?"9Replace this use of System.out or System.err by a logger.(ÿÒõÌ
+S	java:S106H"9Replace this use of System.out or System.err by a logger.(·ßÜ‡üÿÿÿÿ
+M	java:S106M"9Replace this use of System.out or System.err by a logger.(ËŸ­b
+S	java:S106P"9Replace this use of System.out or System.err by a logger.(è—Ê“üÿÿÿÿ
+B
+java:S1125S"'Remove the unnecessary boolean literal.(¢…Šåýÿÿÿÿ

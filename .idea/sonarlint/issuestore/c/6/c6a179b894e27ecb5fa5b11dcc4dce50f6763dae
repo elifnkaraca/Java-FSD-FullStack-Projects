@@ -1,0 +1,11 @@
+
+P
+java:S1118":Add a private constructor to hide the implicit public one.(¦¢ûú
+N	java:S106"9Replace this use of System.out or System.err by a logger.(×†ƒ
+S	java:S106)"9Replace this use of System.out or System.err by a logger.(š·‘øÿÿÿÿ
+S	java:S106<"9Replace this use of System.out or System.err by a logger.(Ü“Ë›úÿÿÿÿ
+S	java:S106A"9Replace this use of System.out or System.err by a logger.(»¹ııÿÿÿÿ
+i
+java:S4042Q"NUse "java.nio.file.Files#delete" here for better messages on error conditions.(ë“«øÿÿÿÿ
+N	java:S106R"9Replace this use of System.out or System.err by a logger.(Ÿ’ˆş
+N	java:S106T"9Replace this use of System.out or System.err by a logger.(Ğ½‚Ø
