@@ -1,7 +1,6 @@
 package com.simplilearn.sporty.shoes.controller;
 
 import com.simplilearn.sporty.shoes.model.Category;
-import com.simplilearn.sporty.shoes.model.Order;
 import com.simplilearn.sporty.shoes.service.CategoryService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -15,13 +15,13 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @ToString
-public class Order {
+public class Orders {
 
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int orderId;
 
-	@DateTimeFormat (pattern = "YYYY-mm-dd") // mysql default date format.
+	@DateTimeFormat (pattern = "yyyy-MM-dd") // mysql default date format.
 	private LocalDate orderplaced;
 
 	private Integer productid;

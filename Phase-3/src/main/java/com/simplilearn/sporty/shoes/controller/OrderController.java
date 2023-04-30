@@ -1,6 +1,6 @@
 package com.simplilearn.sporty.shoes.controller;
 
-import com.simplilearn.sporty.shoes.model.Order;
+import com.simplilearn.sporty.shoes.model.Orders;
 import com.simplilearn.sporty.shoes.service.OrderService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,28 +20,19 @@ public class OrderController {
 
 	@RequestMapping (value = "/createOrderPage", method = RequestMethod.GET)
 	public String createOrderPage(Model model) {
-		model.addAttribute("order", new Order());
+		model.addAttribute("orders", new Orders());
 		return "createOrderPage";
 	}
 
 	@RequestMapping(value = "/createOrder", method = RequestMethod.POST)
-	public String createOrder(@ModelAttribute Order order, Model model){
-		boolean categoryInserted = orderService.insertOrder(order);
+	public String createOrder(@ModelAttribute Orders orders, Model model){
+		boolean categoryInserted = orderService.insertOrder(orders);
 		if(categoryInserted){
-			return "addCategoryPage";
+			model.addAttribute("categoryInfoMessage","Category created!");
+			return "createOrderPage";
 		}
-		return "addCategoryPage";
+		model.addAttribute("categoryInfoMessage","Category cannot be created!");
+		return "createOrderPage";
 	}
 
-/*	@RequestMapping(value = "/viewOrderPage", method = RequestMethod.POST)
-	public String addCategory(@ModelAttribute Order order, Model model){
-		List<Order> orderList = orderService.getAllOrdersByEmail(order.getEmailid());
-
-		if(! orderList.isEmpty()){
-			model.addAttribute("categoryInfoMessage","Category created!");
-			return "viewOrderPage";
-		}
-		model.addAttribute("categoryInfoMessage","Category could not be created!");
-		return "viewOrderPage";
-	}*/
 }

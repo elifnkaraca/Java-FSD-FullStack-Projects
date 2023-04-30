@@ -7,13 +7,14 @@
 </head>
 <body>
 <h2>Create an Order</h2>
-<form action="#" th:action="@{/createOrder}" th:object="${order}" method="post">
-    <label>CategoryName</label>
-    <input type="text" th:field="*{orderplaced}"/><br/>
+<form action="#" th:action="@{/createOrder}" th:object="${orders}" method="post">
+    <label>Create an order</label>
     <input type="text" th:field="*{productid}"/><br/>
     <input type="text" th:field="*{emailid}"/><br/>
+    <input type="date" th:field="*{orderplaced}"/><br/>
     <input type="submit" value="Create an Order"/>
 </form>
+<p th:text="${categoryInfoMessage}"></p>
 <br/>
 <a th:href="@{/adminHome}">Back</a>
 </body>
