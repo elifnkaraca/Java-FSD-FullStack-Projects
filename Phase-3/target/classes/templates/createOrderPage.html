@@ -8,10 +8,9 @@
 <body>
 <h2>Create an Order</h2>
 <form action="#" th:action="@{/createOrder}" th:object="${orders}" method="post">
-    <label>Create an order</label>
-    <input type="text" th:field="*{productid}"/><br/>
-    <input type="text" th:field="*{emailid}"/><br/>
-    <input type="date" th:field="*{orderplaced}"/><br/>
+    <label>Product Id </label><input type="text" th:field="*{productid}"/><br/>
+    <label>Email </label><input type="text" th:field="*{emailid}"/><br/>
+    <label>Date </label><input type="date" th:field="*{orderplaced}"/><br/>
     <input type="submit" value="Create an Order"/>
 </form>
 <p th:text="${categoryInfoMessage}"></p>

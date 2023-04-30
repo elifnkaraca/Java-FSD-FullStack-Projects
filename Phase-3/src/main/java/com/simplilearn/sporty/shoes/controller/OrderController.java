@@ -1,6 +1,5 @@
 package com.simplilearn.sporty.shoes.controller;
 
-import com.simplilearn.sporty.shoes.model.Category;
 import com.simplilearn.sporty.shoes.model.Orders;
 import com.simplilearn.sporty.shoes.service.OrderService;
 import lombok.extern.slf4j.Slf4j;
