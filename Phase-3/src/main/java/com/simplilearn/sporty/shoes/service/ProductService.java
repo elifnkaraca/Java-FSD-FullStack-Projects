@@ -15,7 +15,6 @@ public class ProductService {
     private ProductRepository productRepository;
 
     public boolean insertProduct(Product product) {
-        //TODO: return meaningful string to show the correct response
         try {
             log.info("[insertProduct] started! product will be inserted! :: product ={}", product);
             if (!isProductAlreadyExist(product)) {

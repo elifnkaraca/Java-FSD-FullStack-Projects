@@ -37,21 +37,6 @@ public class OrderController {
 		return "createOrderPage";
 	}
 
-	@RequestMapping (value = "/viewOrderDetailsByCustomer", method = RequestMethod.GET)
-	public String viewOrderDetailsByCustomer(Model model, @ModelAttribute Orders orders) {
-		model.addAttribute("orders", new Orders());
-		List<Orders> orderList = orderService.getAllOrdersByEmail(orders.getEmailid());
-		if (!orderList.isEmpty()) {
-			log.info("[viewOrderDetailsByCustomer] orders will be shown in page! orders={}", orders);
-			model.addAttribute("orders", orders);
-			return "viewOrdersPage";
-		}
-		log.warn("[viewOrderDetailsByCustomer] there is no orders!");
-		model.addAttribute("orderInfo", "there is no any order yet");
-		model.addAttribute("orders", Collections.emptyList());
-		return "viewOrdersPage";
-	}
-
 	@RequestMapping (value = "/viewOrdersPage", method = RequestMethod.GET)
 	public String viewOrdersPage(Model model, @ModelAttribute Orders orders) {
 		model.addAttribute("orders", new Orders());

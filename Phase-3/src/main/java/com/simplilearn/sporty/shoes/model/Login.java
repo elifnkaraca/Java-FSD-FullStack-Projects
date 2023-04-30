@@ -18,10 +18,4 @@ public class Login {
     private String emailId;
     private String password;
     private String typeOfUser;
-   /* @OneToMany
-    @JoinColumn(name="emailid")	// FK
-    private List<Orders> listOfOrders;
-
-    */
-
 }
