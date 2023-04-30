@@ -21,7 +21,7 @@ public class Orders {
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int orderId;
 
-	@DateTimeFormat (pattern = "yyyy-MM-dd") // mysql default date format.
+	@DateTimeFormat (pattern = "yyyy-MM-dd")
 	private LocalDate orderplaced;
 
 	private Integer productid;

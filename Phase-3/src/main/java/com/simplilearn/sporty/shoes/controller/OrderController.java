@@ -1,5 +1,6 @@
 package com.simplilearn.sporty.shoes.controller;
 
+import com.simplilearn.sporty.shoes.model.Category;
 import com.simplilearn.sporty.shoes.model.Orders;
 import com.simplilearn.sporty.shoes.service.OrderService;
 import lombok.extern.slf4j.Slf4j;
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.util.Collections;
+import java.util.List;
 
 @Slf4j
 @Controller
@@ -24,15 +27,45 @@ public class OrderController {
 		return "createOrderPage";
 	}
 
-	@RequestMapping(value = "/createOrder", method = RequestMethod.POST)
-	public String createOrder(@ModelAttribute Orders orders, Model model){
+	@RequestMapping (value = "/createOrder", method = RequestMethod.POST)
+	public String createOrder(@ModelAttribute Orders orders, Model model) {
 		boolean categoryInserted = orderService.insertOrder(orders);
-		if(categoryInserted){
-			model.addAttribute("categoryInfoMessage","Category created!");
+		if (categoryInserted) {
+			model.addAttribute("categoryInfoMessage", "Category created!");
 			return "createOrderPage";
 		}
-		model.addAttribute("categoryInfoMessage","Category cannot be created!");
+		model.addAttribute("categoryInfoMessage", "Category cannot be created!");
 		return "createOrderPage";
+	}
+
+	@RequestMapping (value = "/viewOrderDetailsByCustomer", method = RequestMethod.GET)
+	public String viewOrderDetailsByCustomer(Model model, @ModelAttribute Orders orders) {
+		model.addAttribute("orders", new Orders());
+		List<Orders> orderList = orderService.getAllOrdersByEmail(orders.getEmailid());
+		if (!orderList.isEmpty()) {
+			log.info("[viewOrderDetailsByCustomer] orders will be shown in page! orders={}", orders);
+			model.addAttribute("orders", orders);
+			return "viewOrdersPage";
+		}
+		log.warn("[viewOrderDetailsByCustomer] there is no orders!");
+		model.addAttribute("orderInfo", "there is no any order yet");
+		model.addAttribute("orders", Collections.emptyList());
+		return "viewOrdersPage";
+	}
+
+	@RequestMapping (value = "/viewOrdersPage", method = RequestMethod.GET)
+	public String viewOrdersPage(Model model, @ModelAttribute Orders orders) {
+		model.addAttribute("orders", new Orders());
+		List<Orders> orderList = orderService.getAllOrders();
+		if (!orderList.isEmpty()) {
+			log.info("[viewOrdersPage] orders will be shown in page! orders={}", orders);
+			model.addAttribute("orders", orderList);
+			return "viewOrdersPage";
+		}
+		log.warn("[viewOrdersPage] there is no orders!");
+		model.addAttribute("orderInfo", "there is no any order yet");
+		model.addAttribute("orders", Collections.emptyList());
+		return "viewOrdersPage";
 	}
 
 }
