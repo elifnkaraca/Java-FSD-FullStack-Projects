@@ -1,0 +1,6 @@
+
+q	java:S116"URename this field "teacher_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ι¶γη8ζ¦θι0
+q	java:S116"URename this field "first_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(θ•Ϋμ8σΪσκ0
+p	java:S116"TRename this field "last_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ψ΄―8΅τκ0
+Q
+java:S1128"5Remove this unused import 'javax.persistence.Column'.(μϋζH8£τκ0

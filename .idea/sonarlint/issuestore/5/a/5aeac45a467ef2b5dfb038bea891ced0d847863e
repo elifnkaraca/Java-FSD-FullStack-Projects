@@ -1,0 +1,23 @@
+
+m	java:S117<"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ä€ãâ8·ıë“ê0
+r	java:S117?"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…§´–ùÿÿÿÿ8·ıë“ê0
+T
+java:S1135!"2Complete the task associated to this TODO comment.(ƒŠ® úÿÿÿÿ8Ìıë“ê0
+\
+java:S1161'":Add the "@Override" annotation above this method signature(Ïû©Öûÿÿÿÿ8¥”í“ê0
+m
+java:S1989)"PHandle the following exception that could be thrown by "getWriter": IOException.(ÏÚ‚´8¦”í“ê0
+T
+java:S1135("2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8Íıë“ê0
+Y
+java:S18541"7Remove this useless assignment to local variable "out".(ïô†úÿÿÿÿ8Îıë“ê0
+W
+java:S1161/":Add the "@Override" annotation above this method signature(‹¨¯¿8§”í“ê0
+r
+java:S19891"PHandle the following exception that could be thrown by "getWriter": IOException.(ïô†úÿÿÿÿ8¨”í“ê0
+J
+java:S14811"(Remove this unused "out" local variable.(ïô†úÿÿÿÿ8Ñıë“ê0
+v
+java:S19898"YHandle the following exception that could be thrown by "openSession": HibernateException.(ÿÌéÁ8Œƒñ“ê0
+ƒ
+java:S1989K"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(ÜÕˆêøÿÿÿÿ8¢‡ï“ê0
