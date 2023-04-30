@@ -1,6 +1,6 @@
 package com.simplilearn.sporty.shoes.service;
 
-import com.simplilearn.sporty.shoes.entity.Category;
+import com.simplilearn.sporty.shoes.model.Category;
 import com.simplilearn.sporty.shoes.repository.CategoryRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

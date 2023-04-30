@@ -121,9 +121,5 @@ F
 Java-FSD-Fullstack.iml,0\b\0bfebe434d3596a6903dd42da6d3e8ffa5567c38
 ?
 Phase-2/pom.xml,9\8\98c5ba6543ad42387ec4ead6e89410d5ebdde688
-†
-VPhase-3/src/main/java/com/simplilearn/sporty/shoes/constants/SportyShoesConstants.java,1\0\106d957081483838ddd6c2f5d9dfa84b41728b15
-‚
-RPhase-3/src/main/java/com/simplilearn/sporty/shoes/repository/LoginRepository.java,b\c\bcd192c5b725a010ebe91a4778c2c79c39e8c06c
 ?
 Phase-3/pom.xml,f\d\fd41d94ee996aacaa49099b99cb29b8b1d782461

@@ -1,6 +1,6 @@
 package com.simplilearn.sporty.shoes.repository;
 
-import com.simplilearn.sporty.shoes.entity.Category;
+import com.simplilearn.sporty.shoes.model.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

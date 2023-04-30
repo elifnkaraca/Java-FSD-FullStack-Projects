@@ -6,21 +6,19 @@
     <title>View Category Page</title>
 </head>
 <body>
-<th:block th:if="${#lists.isEmpty(category)}">
-    <p th:text="${categoryInfo}"></p>
+<th:block th:if="${#lists.isEmpty(users)}">
 </th:block>
-<th:block th:unless="${#lists.isEmpty(category)}">
+<th:block th:unless="${#lists.isEmpty(users)}">
     <table border="1">
         <tr>
-            <th>CategoryId</th>
-            <th>Category Name</th>
+            <th>EmailId</th>
+            <th>Type of User</th>
         </tr>
-        <tr th:each="cc:${category}">
-            <td th:text="${cc.cId}"></td>
-            <td th:text="${cc.categoryName}"></td>
+        <tr th:each="cc:${users}">
+            <td th:text="${cc.emailId}"></td>
+            <td th:text="${cc.typeOfUser}"></td>
         </tr>
     </table>
-    <p th:text="${categoryInfo}"></p>
 </th:block>
 
 <br/>
